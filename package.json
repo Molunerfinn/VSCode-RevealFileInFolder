@@ -2,7 +2,7 @@
   "name": "revealfileinfolder",
   "displayName": "Reveal File In Folder",
   "description": "Quickly reveal file in folder/finder/explorer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "Molunerfinn",
   "repository": {
     "type": "git",

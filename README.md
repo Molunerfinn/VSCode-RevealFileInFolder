@@ -1,4 +1,4 @@
-# RevealFileinFolder
+# Reveal File In Folder
 
 > Quickly open your file in folder by context menu.
 
