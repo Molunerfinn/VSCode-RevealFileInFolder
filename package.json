@@ -4,6 +4,10 @@
   "description": "Quickly reveal file in folder/finder/explorer",
   "version": "0.0.1",
   "publisher": "Molunerfinn",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Molunerfinn/VSCode-RevealFileinFolder.git"
+  },
   "engines": {
     "vscode": "^1.23.0"
   },
