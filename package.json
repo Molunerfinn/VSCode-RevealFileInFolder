@@ -41,7 +41,7 @@
                 {
                     "command": "extension.revealFileInFolder",
                     "group": "navigation",
-                    "when": "editorIsOpen && resourceScheme != 'untitled'"
+                    "when": "editorIsOpen && resourceScheme != 'untitled' && resourceScheme != 'walkThrough'"
                 }
             ]
         }
