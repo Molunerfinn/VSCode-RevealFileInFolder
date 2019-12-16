@@ -1,55 +1,64 @@
 {
-  "name": "revealfileinfolder",
-  "displayName": "Reveal File In Folder",
-  "description": "Quickly reveal file in folder/finder/explorer",
-  "version": "0.0.2",
-  "publisher": "Molunerfinn",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Molunerfinn/VSCode-RevealFileinFolder.git"
-  },
-  "engines": {
-    "vscode": "^1.23.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "onCommand:extension.revealFileInFolder"
-  ],
-  "main": "./out/extension",
-  "contributes": {
-    "commands": [
-      {
-        "command": "extension.revealFileInFolder",
-        "title": "Reveal in folder"
-      }
+    "name": "revealfileinfolder",
+    "displayName": "Reveal File In Folder",
+    "description": "Quickly reveal file in folder/finder/explorer",
+    "version": "0.0.2",
+    "publisher": "Molunerfinn",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Molunerfinn/VSCode-RevealFileinFolder.git"
+    },
+    "engines": {
+        "vscode": "^1.23.0"
+    },
+    "categories": [
+        "Other"
     ],
-    "menus": {
-      "editor/context": [
-        {
-          "command": "extension.revealFileInFolder",
-          "when": "editorFocus",
-          "group": "navigation"
+    "activationEvents": [
+        "onCommand:extension.revealFileInFolder"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.revealFileInFolder",
+                "title": "Reveal in folder",
+                "icon": {
+                    "dark": "./icons/reveal.png",
+                    "light": "./icons/reveal_light.png"
+                }
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "extension.revealFileInFolder",
+                    "when": "editorFocus && resourceScheme != 'untitled'",
+                    "group": "navigation"
+                }
+            ],
+            "editor/title": [
+                {
+                    "command": "extension.revealFileInFolder",
+                    "group": "navigation",
+                    "when": "editorIsOpen && resourceScheme != 'untitled'"
+                }
+            ]
         }
-      ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^7.0.43",
+        "tslint": "^5.8.0",
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "tslint-config-standard": "^7.0.0"
     }
-  },
-  "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "npm run compile && node ./node_modules/vscode/bin/test"
-  },
-  "devDependencies": {
-    "@types/mocha": "^2.2.42",
-    "@types/node": "^7.0.43",
-    "tslint": "^5.8.0",
-    "typescript": "^2.6.1",
-    "vscode": "^1.1.6"
-  },
-  "dependencies": {
-    "tslint-config-standard": "^7.0.0"
-  }
 }
