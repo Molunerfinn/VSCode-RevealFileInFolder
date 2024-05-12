@@ -14,7 +14,7 @@ export function activate (context: vscode.ExtensionContext) {
   // The command has been defined in the package.json file
   // Now provide the implementation of the command with  registerCommand
   // The commandId parameter must match the command field in package.json
-  let disposable = vscode.commands.registerCommand('extension.revealFileInFolder', () => {
+  const revealFileInFolderCommand = vscode.commands.registerCommand('extension.revealFileInFolder', () => {
     // The code you place here will be executed every time your command is executed
 
     // Display a message box to the user
@@ -22,7 +22,17 @@ export function activate (context: vscode.ExtensionContext) {
     vscode.commands.executeCommand('revealFileInOS')
   })
 
-  context.subscriptions.push(disposable)
+  context.subscriptions.push(revealFileInFolderCommand)
+
+  const revealFileInExplorerCommand = vscode.commands.registerCommand('extension.revealFileInExplorer', () => {
+    // The code you place here will be executed every time your command is executed
+
+    // Display a message box to the user
+    // vscode.window.showInformationMessage('Hello World!')
+    vscode.commands.executeCommand('workbench.files.action.showActiveFileInExplorer')
+  })
+
+  context.subscriptions.push(revealFileInExplorerCommand)
 }
 
 // this method is called when your extension is deactivated

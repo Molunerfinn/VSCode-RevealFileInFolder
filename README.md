@@ -4,7 +4,7 @@
 
 ## Features
 
-It provides a context menu for you to open a exist file in folder.
+It provides a context menu for you to open a exist file in explorer/folder.
 
 ### Screenshots
 
