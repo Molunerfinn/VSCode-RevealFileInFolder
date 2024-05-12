@@ -50,15 +50,20 @@
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+        "lint": "eslint \"src/**/*.ts\"",
+        "pretest": "npm run compile",
+        "test": "vscode-test"
     },
     "devDependencies": {
         "@types/mocha": "^2.2.42",
         "@types/node": "^7.0.43",
-        "tslint": "^5.8.0",
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.6",
-        "tslint-config-standard": "^7.0.0"
+        "@types/vscode": "^1.89.0",
+        "@vscode/test-cli": "^0.0.8",
+		"@vscode/test-electron": "^2.3.9",
+        "@typescript-eslint/eslint-plugin": "^6.7.0",
+		"@typescript-eslint/parser": "^6.7.0",
+        "eslint": "^8.26.0",
+        "mocha": "^10.2.0",
+        "typescript": "^5.4.2"
     }
 }
