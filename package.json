@@ -9,7 +9,7 @@
     "url": "https://github.com/Molunerfinn/VSCode-RevealFileinFolder.git"
   },
   "engines": {
-    "vscode": "^1.23.0"
+    "vscode": "^1.89.0"
   },
   "categories": [
     "Other"
